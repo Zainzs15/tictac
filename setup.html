@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>2 Player Setup</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body id="body-setup" class="theme">
+  <div class="container setup">
+    <header class="brand">
+      <h1>2 Player Setup</h1>
+      <a class="small home-link" href="index.html">← Home</a>
+    </header>
+
+    <main class="setup-main card animated-card">
+      <form id="twoPlayerForm">
+        <label>Player 1 name
+          <input id="p1Name" required maxlength="12" placeholder="Player 1" />
+        </label>
+
+        <label>Player 1 color
+          <select id="p1Color" required>
+            <option value="">Choose</option>
+            <option value="green">Green</option>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="orange">Orange</option>
+            <option value="pink">Pink</option>
+          </select>
+        </label>
+
+        <label>Player 2 name
+          <input id="p2Name" required maxlength="12" placeholder="Player 2" />
+        </label>
+
+        <label>Player 2 color
+          <select id="p2Color" required>
+            <option value="">Choose</option>
+            <option value="green">Green</option>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="orange">Orange</option>
+            <option value="pink">Pink</option>
+          </select>
+        </label>
+
+        <div class="row">
+          <button type="submit" class="btn">Start 2-Player Game</button>
+          <button type="button" id="loadLast" class="small">Load Saved</button>
+        </div>
+
+        <p class="note">Both players cannot pick the same color. Data for 2 players is stored on this device.</p>
+      </form>
+
+      <div class="scores card small" id="scoresCard">
+        <h4>Saved scores</h4>
+        <div id="scoresContent">No saved matches yet.</div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/setup.js"></script>
+</body>
+</html>
