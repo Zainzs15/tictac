@@ -20,6 +20,18 @@
     }
   });
 
+  (function(){
+  const aiBtn = document.getElementById('aiBtn');
+  const difficultySelect = document.getElementById('difficultySelect');
+
+  aiBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const diff = difficultySelect.value;
+    window.location = `game.html?mode=ai&diff=${diff}`;
+  });
+})();
+
+
   // background image saved for game page
   const savedBg = localStorage.getItem('tictactoe_game_bg') || '';
   if(savedBg) bgInput.value = savedBg;

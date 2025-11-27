@@ -6,40 +6,39 @@
   <title>Tic-Tac-Toe — Home</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="theme" id="body">
+<body class="theme dark">
   <div class="container home">
     <header class="brand">
-      <h1 class="logo">Tic-Tac-Toe</h1>
-      <div class="theme-toggle">
-        <label class="switch">
-          <input id="themeCheckbox" type="checkbox">CHANGE LAYOUT</label>
-          <span class="slider"></span>
-        </label>
-      </div>
+      <h1 class="logo">Tic-Tac-Toe by Zain</h1>
     </header>
 
     <main class="home-main">
+      <!-- Play card -->
       <div class="card animated-card">
         <h2>Play</h2>
         <p>Choose your mode and step into battle.</p>
 
         <div class="buttons">
-          <a class="btn" href="game.html?mode=ai">AI Mode (vs Computer)</a>
+          <button id="aiBtn" class="btn">AI Mode (vs Computer)</button>
           <a class="btn" href="setup.html">2 Players (local)</a>
         </div>
 
         <div class="settings-block">
-          <h3>Background (optional)</h3>
-          <p>Paste image URL to use as background on game page.</p>
-          <input id="bgInput" placeholder="Paste background image URL here" />
-          <button id="saveBg" class="small">Save BG</button>
-          <button id="clearBg" class="small">Clear</button>
+          <label>AI Difficulty
+            <select id="difficultySelect">
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
+              <option value="extreme">Extreme</option>
+            </select>
+          </label>
         </div>
       </div>
 
+      <!-- Credits card -->
       <div class="card credits">
         <h3>Prototype</h3>
-        <p>Unbeatable AI (Minimax), Animated UI, Local storage for 2-player names & colors.</p>
+        <p>Unbeatable AI (Minimax), Neon UI, RGB cells, Local storage for 2-player names & colors.</p>
       </div>
     </main>
 
@@ -48,6 +47,16 @@
     </footer>
   </div>
 
-  <script src="js/home.js"></script>
+  <script>
+    (function(){
+      const aiBtn = document.getElementById('aiBtn');
+      const difficultySelect = document.getElementById('difficultySelect');
+
+      aiBtn.addEventListener('click', () => {
+        const diff = difficultySelect.value;
+        window.location.href = `game.html?mode=ai&diff=${diff}`;
+      });
+    })();
+  </script>
 </body>
 </html>
